@@ -20,7 +20,7 @@
   app.use(express.static(join(__dirname, 'public')));
   app.use("/publicProjects/DiceGame", express.static(join(__dirname, 'publicProjects', 'DiceGame')));
   app.use("/publicProjects/SimonGame", express.static(join(__dirname, 'publicProjects', 'SimonGame')));
-  app.use("/publicProjects/calculator", express.static(join(__dirname, 'PublicProjects', 'calculator')));
+  app.use("/publicProjects/calculator", express.static(join(__dirname, 'publicProjects', 'calculator')));
   
 
 
