@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aleksa Portfolio</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://getbootstrap.com/docs/5.0/examples/album/album.css" rel="stylesheet">
+  <link rel="stylesheet" href="main.css">
+  
+  <style>
+    /* Custom CSS */
+    .center-div {
+      text-align: center; 
+      display: flex;
+      flex-direction: column;
+      justify-content: center; 
+      align-items: center; 
+      max-width: 600px; 
+      width: 100%; /* Set width to 100% */
+      height: 40vh; 
+      margin-right: auto; 
+      margin-left: auto;
+      padding-right: 15px; 
+      padding-left: 15px;
+    }
+  </style>
+</head>
+<body>
+  <!-- START OF THE HEADER-->
+<header>
+  <div class="collapse bg-dark" id="navbarHeader">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-md-7 py-4">
+          <h4 class="text-white">About</h4>
+          <p class="text-muted">I'm Aleksa Djuric, pursuing Programming & Software Engineering at Pan-European University. My passion lies in front-end development, cyber security, and system administration. Seeking hands-on experience through upcoming internships.</p>
+        </div>
+        <div class="col-sm-4 offset-md-1 py-4">
+          <h4 class="text-white">Contact</h4>
+          <ul class="list-unstyled">
+            <li><a href="https://www.linkedin.com/in/aleksa-%C4%91uri%C4%87-689600259/" target="_blank" class="text-white">LinkedIn</a></li>
+            <li><a href="https://github.com/mrkrca" target="_blank" class="text-white">Github</a></li>
+            <li><a href="https://drive.google.com/drive/home?dmr=1&ec=wgc-drive-globalnav-goto" target="_blank" class="text-white">CV</a></li>
+            <li><a onclick="goBottom()" href="#" class="text-white">Email me</a></li>
+
+            <script>
+
+              function goBottom() {
+              const bottomPosition = document.documentElement.scrollHeight - window.innerHeight;
+              window.scrollTo({
+                top: bottomPosition,
+                behavior: 'smooth'
+              });
+            }
+
+            </script>
+          </ul> 
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="navbar navbar-dark bg-dark shadow-sm">
+    <div class="container">
+      <a href="#" class="navbar-brand d-flex align-items-center">
+        <strong>Aleksa</strong>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- END OF THE HEADER-->
+
+<main>
+
+  <div class="container">
+    <div class="center-div">
+      <h1 class="display-3 font-weight-bold">ALEKSA</h1>
+      <p class="lead textSizeP1">Aleksa Djuric, Tech Enthusiast Open To Opportunities.
+    </p>
+      <p class="lead textSizeP font-weight-bold ">Recent Computer Science graduate with a keen interest in programming, algorithms, and software development. Although my professional experience is limited, I'm eager to enhance my skills and knowledge through practical opportunities. Ready to dive into entry-level positions, internships, or projects where I can learn, grow, and contribute effectively to the world of computer science.</p>
+    </div>
+  </div>
+
+  <div class="album py-5 mt-1 mb-1 ">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3  ">
+        <div class="col">
+          <a href="/publicProjects/DiceGame/" target="_blank" class="text-dark" style="text-decoration: none;" >
+            <div class="card shadow-sm h-100 ">
+              <img src="/images/DiceGameImg.png" alt="">
+              <div class="card-body ">
+                <p class="card-text" style="font-size: 13px;"> Created a dynamic dice project using JavaScript, HTML, and CSS to simulate dice rolls and explore interactive web development.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">JavaScript</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">HTML</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">CSS</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+
+        <div class="col mt-1 mb-1">
+          <a href="/publicProjects/SimonGame/" target="_blank" class="text-dark" style="text-decoration: none;" >
+            <div class="card shadow-sm h-100">
+              <img src="/images/SimonGamePng.png" alt="">
+              <div class="card-body">
+                <p class="card-text" style="font-size: 13px;">I developed a digital version of the classic Simon game using JavaScript, HTML, and CSS, offering players a nostalgic yet interactive experience of memory and pattern recognition.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">JavaScript</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">HTML</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">CSS</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+
+        <div class="col mt-1 mb-1">
+          <a href="#" target="_blank" class="text-dark" style="text-decoration: none;" >
+            <div class="card shadow-sm h-100">
+              <img src="/images/PortFooolioPng.png" alt="">
+              <div class="card-body ">
+                <p class="card-text" style="font-size: 13px;">This is a protoflio website made using bootstrap and HTML and some custom css.</p>
+                <div class="d-flex justify-content-between align-items-center ">
+                  <div class="btn-group ">
+                    <button type="button" class="btn btn-sm btn-outline-secondary ">JavaScript</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">HTML</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">CSS</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+
+        <div class="col-md-4 mt-1 mb-1">
+          <div class="card h-100">
+              <a href="https://github.com/mrkrca/BlogApp"  target="_blank" class="text-dark text-decoration-none">
+                  <img src="/images/Screenshot_12.png" class="card-img-top" alt="Portfolio Image">
+                  <div class="card-body">
+                      <p class="card-text mb-3" style="font-size: 14px;">This is a blog application for posting blogs. Able to post, edit and delete posts. If you want to check it out: https://github.com/mrkrca/BlogApp  </p>
+                      <div class="d-flex flex-wrap align-items-center">
+                          <div class="btn-group flex-wrap">
+                              <button type="button" class="btn btn-sm btn-outline-secondary">JavaScript</button>
+                              <button type="button" class="btn btn-sm btn-outline-secondary">HTML</button>
+                              <button type="button" class="btn btn-sm btn-outline-secondary">CSS</button>
+                              <button type="button" class="btn btn-sm btn-outline-secondary">EJS</button>
+                              <button type="button" class="btn btn-sm btn-outline-secondary">Node.js</button>
+                              <button type="button" class="btn btn-sm btn-outline-secondary">Express.js</button>
+                              <button type="button" class="btn btn-sm btn-outline-secondary">Bootstrap</button>
+                          </div>
+                      </div>
+                  </div>
+              </a>
+          </div>
+      </div>
+      
+      <div class="col-md-4 mt-1 mb-1">
+        <div class="card h-100">
+            <a href="/publicProjects/calculator/"  target="_blank" class="text-dark text-decoration-none">
+                <img src="/images/calculator.png" class="card-img-top" alt="Portfolio Image">
+                <div class="card-body">
+                    <p class="card-text mb-3" style="font-size: 14px;">This is a blog application for posting blogs. Able to post, edit and delete posts. If you want to check it out: https://github.com/mrkrca/BlogApp  </p>
+                    <div class="d-flex flex-wrap align-items-center">
+                        <div class="btn-group flex-wrap">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">JavaScript</button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary">HTML</button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary">CSS</button>
+                            
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+   
+        <!-- ADD MORE CARD IF WANTED -->
+
+      </div>
+
+    </div>
+    
+  </div>
+ 
+  
+
+  <div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center">
+    
+    <div class="list-group">
+      <a href="#" class="navbar-brand d-flex align-items-center justify-content-center my-5">
+        <strong class="text-dark h1 font-weight-bold">EDUCATION</strong>
+      </a>
+      <a href="https://apeiron-uni.eu/" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+       
+        <div class="d-flex gap-2 w-100 justify-content-between">
+          <div>
+            <h6 class="mb-0 h5 font-weight-bold">Master's Degree in Information Technologies </h6>
+            <p class="mb-0 opacity-75"> Faculty of Information Technologies, <span class="font-italic font-weight-bold">major</span>: Business Informatics (currently enrolled), focus on Programming and Software Engineering</p>
+          </div>
+          
+        </div>
+      </a>
+      <a href="https://apeiron-uni.eu/" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+    
+        <div class="d-flex gap-2 w-100 justify-content-between">
+          <div>
+            <h6 class="mb-0 h5 font-weight-bold">Bachelor's Degree in Information Technologies</h6>
+            <p class="mb-0 opacity-75">Faculty of Information Technologies, <span class="font-italic font-weight-bold">major</span>: Software Engineering and Programming</p>
+          </div>
+         
+        </div>
+      </a>
+      <a href="https://apeiron-gemit.org/" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+       
+        <div class="d-flex gap-2 w-100 justify-content-between">
+          <div>
+            <h6 class="mb-0 h5 font-weight-bold">High School Diploma</h6>
+            <p class="mb-0 opacity-75">Economic Technician</p>
+          </div>
+          
+        </div>
+      </a>
+    </div>
+  </div>
+
+
+  <div class="container my-5">
+    <a href="#" class="navbar-brand d-flex align-items-center justify-content-center my-5">
+      <strong class="text-dark h1 font-weight-bold text-uppercase">certification</strong>
+    </a>
+    <div class="row">
+      <div class="col-md-6 mb-4">
+        <a href="https://www.udemy.com/certificate/UC-93fab339-84c6-40df-b7b5-1ed33778512c/" class="card h-100 text-decoration-none text-dark list-group-item-action">
+          <div class="card-body">
+            <h5 class="card-title">Cloud Computing and Amazon Web Services (AWS) Fundamentals</h5>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-6 mb-4">
+        <a href="https://www.udemy.com/certificate/UC-c032de7a-9055-485c-80db-f4327b2733e9/" class="card h-100 text-decoration-none text-dark list-group-item-action">
+          <div class="card-body">
+            <h5 class="card-title">CompTIA A+</h5>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-6 mb-4">
+        <a href="https://qstationhub.com/courses/frontend-web-programiranje-za-pocetnike/" class="card h-100 text-decoration-none text-dark list-group-item-action">
+          <div class="card-body">
+            <h5 class="card-title">Frontend Web programming - For Beginners</h5>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-6 mb-4">
+        <a href="https://qstationhub.com/courses/frontend-napredni-java-script-react-i-node-js/" class="card h-100 text-decoration-none text-dark list-group-item-action">
+          <div class="card-body">
+            <h5 class="card-title">JavaScript + Node.js</h5>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-6 mb-4">
+        <a href="https://www.udemy.com/course/securityplus/learn/lecture/40328844?start=15#overview" class="card h-100 text-decoration-none text-dark list-group-item-action">
+          <div class="card-body">
+            <h5 class="card-title">CompTIA Security+ - <span class="font-italic font-weight-bold">CURRENTLY</span></h5>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-6 mb-4">
+        <a href="https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/38912014?start=90#overview" class="card h-100 text-decoration-none text-dark list-group-item-action">
+          <div class="card-body">
+            <h5 class="card-title">Complete 2024 Web Development Bootcamp(HTML, CSS, Javascript, Node, React, PostgreSQL, Web3 and DApps) - <span class="font-italic font-weight-bold">CURRENTLY</span></h5>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-6 mb-4">
+        <a href="https://www.udemy.com/course/cypress-web-automation-testing-from-zero-to-hero/learn/lecture/18179762?start=60#overview" class="card h-100 text-decoration-none text-dark list-group-item-action">
+          <div class="card-body">
+            <h5 class="card-title">Cypress: Web Automation Testing from Zero to Hero
+            </h5>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container my-5">
+    <a href="#" class="navbar-brand d-flex align-items-center justify-content-center my-5">
+      <strong class="text-dark h1 font-weight-bold text-uppercase">Experience</strong>
+    </a>
+    <div class="row">
+      <div class="col-md-6 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Touch of Italy | Ocean City, MD</h5>
+            <p class="card-text">
+              <ul>
+                <li>Prepared sauces, soups, and other dishes according to recipes.</li>
+                <li>Developed strong customer service skills by effectively handling transactions and addressing customer inquiries, ensuring a positive experience.</li>
+                <li>Gained cross-cultural communication skills by interacting with diverse customers and team members, enhancing cultural awareness and sensitivity.</li>
+                <li>Improved language proficiency by engaging with customers and colleagues, facilitating better communication in a multicultural environment.</li>
+              </ul>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Integral inženjering a.d. | Banja Luka, RS</h5>
+            <p class="card-text">
+              <ul>
+                <li>Provided technical support to other personnel involved in the testing operations.</li>
+                <li>Collaborated on the development of a product sales website using Bootstrap, enhancing responsive design and user experience.</li>
+                <li>Gained practical knowledge of "Code First" methodologies and database integration, streamlining website functionality.</li>
+                <li>Received mentorship from an experienced programmer, learning new web development techniques and best practices.</li>
+                <li>Demonstrated strong problem-solving skills by independently troubleshooting and optimizing website features.</li>
+              </ul>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</main>
+
+
+<footer class="text-muted py-5">
+  <div class="list-group">
+    <a href="#" class="navbar-brand d-flex align-items-center justify-content-center my-5">
+      <strong class="text-dark h1 font-weight-bold">CONTACT ME</strong>
+    </a>
+  <div class="container">
+    
+
+    <form action="/submit" method="POST">
+  <div data-mdb-input-init class="form-outline mb-4">
+    <label class="form-label" for="name" >Name</label>
+    <input type="text" id="name" name="name" class="form-control" placeholder="Name..." />
+    
+  </div>
+
+  
+  <div data-mdb-input-init class="form-outline mb-4">
+    <label class="form-label" for="email">Email address</label>
+    <input type="email" id="email" name="email" class="form-control" placeholder="Email..." />
+    
+  </div>
+
+ 
+  <div data-mdb-input-init class="form-outline mb-4">
+    <label class="form-label" for="message">Message</label>
+    <textarea class="form-control" name="message" id="message" rows="4" placeholder="Message..."></textarea>
+    
+  </div>
+
+ 
+  <button data-mdb-ripple-init type="submit" onclick="deleteInput()" class="btn btn-primary btn-block mb-4">Send</button>
+</form>
+   
+ 
+    
+  </div>
+</footer>
+
+<script type="module" src="/index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dotenv@10.0.0/dist/dotenv.js"></script>
+<script src="https://getbootstrap.com/docs/5.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>
