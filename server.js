@@ -4,7 +4,7 @@
   import { fileURLToPath } from "url";
   import dotenv from "dotenv";
   import nodemailer from "nodemailer";
- 
+  import spawn from "child_process"
 
   dotenv.config();
   
@@ -22,8 +22,10 @@
   app.use("/publicProjects/SimonGame", express.static(join(__dirname, 'publicProjects', 'SimonGame')));
   app.use("/publicProjects/calculator", express.static(join(__dirname, 'publicProjects', 'calculator')));
   
-
-
+  app.use('/publicProjects/BlogApp', (req, res) => {
+    console.log("Redirecting to BlogApp...");
+    res.redirect('http://localhost:3001');
+  });
   app.get("/publicProjects/DiceGame/", (req, res) => {
     res.sendFile(join(__dirname, "publicProjects", "DiceGame", "dicee.html"));
   });

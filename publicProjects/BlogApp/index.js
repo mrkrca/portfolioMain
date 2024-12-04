@@ -13,7 +13,7 @@ var posts = [];
 var idCounter = 0;
 
 const app = express();
-const port = 5000;
+const port = 3001;
 
 app.set('view engine', 'ejs')
 app.use(express.static(__dirname));
@@ -121,7 +121,7 @@ app.post("/edit-product/:id", (req, res)=> {
     res.redirect("/");
 });
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
