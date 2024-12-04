@@ -1,28 +1,26 @@
 {
-    "apps": [
-      {
-        "exec_mode": "fork_mode",
-        "script": "./server.js",
-        "name": "portfolio",
-        
-        "env": {
-          "PORT": 3000,
-          "NODE_ENV": "production"
-        },
-        "error_file": "/home/ubuntu/logs/proj-0.err.log",
-        "out_file": "/var/www/logs/proj-0.out.log"
+  "apps": [
+    {
+      "exec_mode": "fork_mode",
+      "script": "./server.js",
+      "name": "portfolio",
+      "env": {
+        "PORT": 3000,
+        "NODE_ENV": "production"
       },
-      {
-        "exec_mode": "fork_mode",
-        "script": "./publicProjects/BlogApp",
-        "name": "BlogApp",
-        
-        "env": {
-          "PORT": 3001,
-          "NODE_ENV": "production"
-        },
-        "error_file": "/var/www/logs/proj-1.err.log",
-        "out_file": "/var/www/logs/proj-1.out.log"
-      }
-    ]
-  }
+      "error_file": "/home/ubuntu/logs/proj-0.err.log",
+      "out_file": "/var/www/logs/proj-0.out.log"
+    },
+    {
+      "exec_mode": "fork_mode",
+      "script": "/home/ubuntu/portfolioMain/publicProjects/BlogApp/index.js",  
+      "name": "BlogApp",
+      "env": {
+        "PORT": 3001,
+        "NODE_ENV": "production"
+      },
+      "error_file": "/var/www/logs/proj-1.err.log",
+      "out_file": "/var/www/logs/proj-1.out.log"
+    }
+  ]
+}

@@ -5,6 +5,8 @@ import { fileURLToPath } from "url";
 import jQuery from "jquery";
 import { log } from "console";
 import ejs from "ejs"
+import BlogApp from './publicProjects/BlogApp/index.js';
+
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 
