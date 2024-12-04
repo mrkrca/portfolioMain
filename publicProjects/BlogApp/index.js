@@ -20,7 +20,9 @@ app.use(express.static(__dirname));
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }))
 
-
+app.get(["/", "/publicProjects/BlogApp", "/publicProjects/BlogApp/"], (req, res) => {
+    res.render("index", { posts: posts });
+});
 app.get("/edit-product/:id", (req, res)=> {
     const postId = req.params.id;
     var postToChange = posts.find(post => post.id == postId);

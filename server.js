@@ -22,10 +22,20 @@
   app.use("/publicProjects/SimonGame", express.static(join(__dirname, 'publicProjects', 'SimonGame')));
   app.use("/publicProjects/calculator", express.static(join(__dirname, 'publicProjects', 'calculator')));
   
-  app.use('/publicProjects/BlogApp', (req, res) => {
+  app.get('/publicProjects/BlogApp', (req, res) => {
     console.log("Redirecting to BlogApp...");
     res.redirect('http://localhost:3001');
   });
+  
+  // Catch-all route to handle client-side routing for BlogApp
+  app.get('/publicProjects/BlogApp/*', (req, res) => {
+    res.redirect('http://localhost:3001');
+  });
+
+  app.get('/publicProjects/BlogApp/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'projects', 'BlogApp', 'views'));
+});
+
   app.get("/publicProjects/DiceGame/", (req, res) => {
     res.sendFile(join(__dirname, "publicProjects", "DiceGame", "dicee.html"));
   });
