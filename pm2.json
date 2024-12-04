@@ -2,7 +2,7 @@
   "apps": [
     {
       "exec_mode": "fork_mode",
-      "type": "module",
+     
       "script": "./server.js",
       "name": "portfolio",
       "env": {
@@ -14,7 +14,7 @@
     },
     {
       "exec_mode": "fork_mode",
-      "type": "module",
+      
       "script": "/home/ubuntu/portfolioMain/publicProjects/BlogApp/index.js",  
       "name": "BlogApp",
       "env": {
