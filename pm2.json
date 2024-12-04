@@ -3,20 +3,20 @@
       {
         "exec_mode": "fork_mode",
         "script": "./server.js",
-        "name": "proj-0",
-        "node_args": [ "--portfolio" ],
+        "name": "portfolio",
+        
         "env": {
           "PORT": 3000,
           "NODE_ENV": "production"
         },
-        "error_file": "/var/www/logs/proj-0.err.log",
+        "error_file": "/home/ubuntu/logs/proj-0.err.log",
         "out_file": "/var/www/logs/proj-0.out.log"
       },
       {
         "exec_mode": "fork_mode",
         "script": "./publicProjects/BlogApp",
-        "name": "proj-1",
-        "node_args": [ "--BlogApp" ],
+        "name": "BlogApp",
+        
         "env": {
           "PORT": 3001,
           "NODE_ENV": "production"
