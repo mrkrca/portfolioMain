@@ -7,7 +7,7 @@ import { error } from "console";
 
 
 const app = express();
-const port = 3000;
+const port = 4000;
 
 // ignore database connection
 const db = new pg.Client({
