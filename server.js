@@ -5,7 +5,8 @@
   import dotenv from "dotenv";
   import nodemailer from "nodemailer";
   import spawn from "child_process"
-
+  import BlogApp from './publicProjects/BlogApp/index.js';
+  import JSONSITE from './publicProjects/JSONSITE/index.js';
   dotenv.config();
   
   const __filename = fileURLToPath(import.meta.url);
