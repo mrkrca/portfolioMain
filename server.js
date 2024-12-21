@@ -26,7 +26,11 @@
     console.log("Redirecting to BlogApp...");
     res.redirect('http://localhost:3001');
   });
-  
+  app.get('/publicProjects/JSONSITE', (req, res) => {
+    console.log("Redirecting to ffmovies...");
+    res.redirect('http://localhost:4000');
+  });
+  //TESTED DONT TOUCH NOTHING.
   // Catch-all route to handle client-side routing for BlogApp
   app.get('/publicProjects/BlogApp/*', (req, res) => {
     res.redirect('http://localhost:3001');
