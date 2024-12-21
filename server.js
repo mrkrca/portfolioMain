@@ -31,6 +31,10 @@
     console.log("Redirecting to ffmovies...");
     res.redirect('http://localhost:4000');
   });
+  app.get('/publicProjects/JSONSITE/*', (req, res) => {
+    res.redirect('http://localhost:4000');
+  });
+
   //TESTED DONT TOUCH NOTHING.
   // Catch-all route to handle client-side routing for BlogApp
   app.get('/publicProjects/BlogApp/*', (req, res) => {
