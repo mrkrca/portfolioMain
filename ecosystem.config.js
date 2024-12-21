@@ -9,10 +9,11 @@ module.exports = {
       },
       {
         name: "ffmovies",
-        script: ".publicProjects/JSONSITE/index.js",
+        script: "./publicProjects/JSONSITE/index.js",  
         env: {
           PORT: 4000,
         },
       },
     ],
   };
+  
