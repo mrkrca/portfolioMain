@@ -2,7 +2,7 @@ module.exports = {
   apps: [
     {
       name: "portfolio",
-      script: "server.js",
+      script: "/home/ubuntu/portfolioMain/server.js",
       env: {
         PORT: 3000,
         NODE_ENV: "production"
@@ -10,7 +10,7 @@ module.exports = {
     },
     {
       name: "ffmovies",
-      script: "/publicProjects/JSONSITE/index.js",
+      script: "/home/ubuntu/portfolioMain/publicProjects/JSONSITE/index.js",
       env: {
         PORT: 4000,
         NODE_ENV: "production"
