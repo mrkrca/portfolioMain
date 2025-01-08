@@ -20,9 +20,7 @@ app.use("/publicProjects/DiceGame", express.static(join(__dirname, 'publicProjec
 app.use("/publicProjects/SimonGame", express.static(join(__dirname, 'publicProjects', 'SimonGame')));
 app.use("/publicProjects/calculator", express.static(join(__dirname, 'publicProjects', 'calculator')));
 
-app.get('/publicProjects/BlogApp/', (req, res) => {
-  res.sendFile(join(__dirname, 'projects', 'BlogApp', 'views'));
-});
+
 
 app.get("/publicProjects/DiceGame/", (req, res) => {
   res.sendFile(join(__dirname, "publicProjects", "DiceGame", "dicee.html"));
@@ -36,13 +34,6 @@ app.get("/publicProjects/calculator/", (req, res) => {
   res.sendFile(join(__dirname, "publicProjects", "calculator", "calculator.html"));
 });
 
-app.get('/to-do-app-production-83e8.up.railway.app', (req, res) => {
-  res.redirect('https://to-do-app-production-83e8.up.railway.app');
-});
-
-app.get('/weatherapp-production-d453.up.railway.app', (req, res) => {
-  res.redirect('https://weatherapp-production-d453.up.railway.app');
-});
 
 app.post('/submit', async (req, res) => {
   const { name, email, message } = req.body;
