@@ -37,12 +37,12 @@
   });
 
   app.get('/to-do-app-production-83e8.up.railway.app', (req, res) => {
-    res.redirect('to-do-app-production-83e8.up.railway.app');
+    res.redirect('https://to-do-app-production-83e8.up.railway.app');
   });
+  
   app.get('/weatherapp-production-d453.up.railway.app', (req, res) => {
-    res.redirect('weatherapp-production-d453.up.railway.app');
+    res.redirect('https://weatherapp-production-d453.up.railway.app');
   });
-
 
   app.get('/publicProjects/BlogApp/', (req, res) => {
     res.sendFile(path.join(__dirname, 'projects', 'BlogApp', 'views'));
