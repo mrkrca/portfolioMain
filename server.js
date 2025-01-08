@@ -20,6 +20,9 @@ app.use("/publicProjects/DiceGame", express.static(join(__dirname, 'publicProjec
 app.use("/publicProjects/SimonGame", express.static(join(__dirname, 'publicProjects', 'SimonGame')));
 app.use("/publicProjects/calculator", express.static(join(__dirname, 'publicProjects', 'calculator')));
 
+app.get("/", (req, res) => {
+  res.sendFile(join(__dirname, "public", "index.html"));
+});
 
 
 app.get("/publicProjects/DiceGame/", (req, res) => {
