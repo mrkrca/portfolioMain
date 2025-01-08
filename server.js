@@ -13,7 +13,7 @@
   const __dirname = dirname(__filename);
   
   const app = express();
-  const port = 3000;
+  const port = process.env.PORT || 8080;
   app.use(bodyParser.urlencoded({ extended: true }));
 
  
@@ -74,7 +74,7 @@
     }
   });
   
+  
   app.listen(port, () => {
     console.log(`Listening to port ${port}`);
   });
-  
