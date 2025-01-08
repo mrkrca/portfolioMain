@@ -24,25 +24,6 @@
   app.use("/publicProjects/calculator", express.static(join(__dirname, 'publicProjects', 'calculator')));
  
 
-  app.get('/publicProjects/BlogApp', (req, res) => {
-    console.log("Redirecting to BlogApp...");
-    res.redirect('http://localhost:3001');
-  });
- 
-
-  //TESTED DONT TOUCH NOTHING.
-  // Catch-all route to handle client-side routing for BlogApp
-  app.get('/publicProjects/BlogApp/*', (req, res) => {
-    res.redirect('http://localhost:3001');
-  });
-
-  app.get('/to-do-app-production-83e8.up.railway.app', (req, res) => {
-    res.redirect('https://to-do-app-production-83e8.up.railway.app');
-  });
-  
-  app.get('/weatherapp-production-d453.up.railway.app', (req, res) => {
-    res.redirect('https://weatherapp-production-d453.up.railway.app');
-  });
 
   app.get('/publicProjects/BlogApp/', (req, res) => {
     res.sendFile(path.join(__dirname, 'projects', 'BlogApp', 'views'));
