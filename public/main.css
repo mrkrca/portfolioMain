@@ -12,8 +12,20 @@ body {
 }
 
 
+.card-borders {
+  border: 2px solid #000;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+}
 
 
+.card img {
+  height: 200px; /* Adjust as needed */
+ 
+  object-fit: cover;
+}
 
 @media (max-width: 370px) {
   
