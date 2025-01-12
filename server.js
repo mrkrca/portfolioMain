@@ -24,9 +24,7 @@ app.use("/publicProjects/DiceGame", express.static(join(__dirname, 'publicProjec
 app.use("/publicProjects/SimonGame", express.static(join(__dirname, 'publicProjects', 'SimonGame')));
 app.use("/publicProjects/calculator", express.static(join(__dirname, 'publicProjects', 'calculator')));
 
-app.get("/", (req, res) => {
-  res.render("index", { siteKey: process.env.RECAPTCHA_SITE_KEY });
-});
+
 
 app.get("/publicProjects/DiceGame/", (req, res) => {
   res.sendFile(join(__dirname, "publicProjects", "DiceGame", "dicee.html"));
@@ -40,6 +38,10 @@ app.get("/publicProjects/calculator/", (req, res) => {
   res.sendFile(join(__dirname, "publicProjects", "calculator", "calculator.html"));
 });
 
+
+app.get("/", (req, res) => {
+  res.render("index", { siteKey: process.env.RECAPTCHA_SITE_KEY });
+});
 
 app.post('/submit', async (req, res) => {
   const { name, email, message, 'g-recaptcha-response': recaptchaResponse } = req.body;
