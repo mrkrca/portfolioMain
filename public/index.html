@@ -433,8 +433,8 @@
   </div>
 
   <div class="form-group">
-    <div class="cf-turnstile" data-sitekey="0x4AAAAAAA5KdZiSf9m4aEEv"></div>
-  </div>
+    <div class="cf-turnstile" data-sitekey="<%= process.env.TURNSTILE_SITE_KEY %>"></div>
+</div>
   <button data-mdb-ripple-init type="submit" onclick="deleteInput()" class="btn btn-primary btn-block mb-4">Send</button>
 </form>
    
