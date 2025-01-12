@@ -19,6 +19,7 @@ form.addEventListener("submit", async (e) => {
   }
 
   try {
+    console.time('Form submission');
     const response = await fetch('/submit', {
       method: 'POST',
       headers: {
@@ -33,13 +34,12 @@ form.addEventListener("submit", async (e) => {
     });
 
     const data = await response.json();
+    console.timeEnd('Form submission');
 
     if (data.success) {
-      setTimeout(() => {
-        checkInput(true); 
-        form.reset();
-        grecaptcha.reset(); 
-      }, 500); 
+      checkInput(true); 
+      form.reset();
+      grecaptcha.reset(); 
     } else {
       checkInput(false); 
     }

@@ -52,8 +52,10 @@ app.post('/submit', async (req, res) => {
   const recaptchaUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${recaptchaSecret}&response=${recaptchaResponse}`;
 
   try {
+    console.time('reCAPTCHA verification');
     const recaptchaRes = await fetch(recaptchaUrl, { method: 'POST' });
     const recaptchaData = await recaptchaRes.json();
+    console.timeEnd('reCAPTCHA verification');
 
     if (!recaptchaData.success) {
       return res.status(400).json({ success: false, message: 'reCAPTCHA verification failed' });
@@ -76,7 +78,10 @@ app.post('/submit', async (req, res) => {
       text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
     };
 
+    console.time('Email sending');
     await transporter.sendMail(mailOptions);
+    console.timeEnd('Email sending');
+
     res.status(200).json({ success: true, message: 'Email sent successfully' });
   } catch (error) {
     res.status(500).json({ success: false, message: 'Error sending email' });
