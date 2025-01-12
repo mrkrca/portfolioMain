@@ -46,7 +46,7 @@ app.post('/submit', async (req, res) => {
   const { name, email, message, 'g-recaptcha-response': recaptchaResponse } = req.body;
 
   // Verify reCAPTCHA
-  const recaptchaSecret = process.env.TURNSTILE_SECRET_KEY;
+  const recaptchaSecret = process.env.RECAPTCHA_SECRET_KEY;
   const recaptchaUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${recaptchaSecret}&response=${recaptchaResponse}`;
 
   try {
