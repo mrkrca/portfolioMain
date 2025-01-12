@@ -8,6 +8,12 @@
   <link href="https://getbootstrap.com/docs/5.0/examples/album/album.css" rel="stylesheet">
   <link rel="stylesheet" href="main.css">
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const recaptchaSiteKey = "<%= process.env.RECAPTCHA_SITE_KEY %>";
+      document.querySelector(".g-recaptcha").setAttribute("data-sitekey", recaptchaSiteKey);
+    });
+  </script>
   <style>
     /* Custom CSS */
     .center-div {
@@ -432,7 +438,7 @@
     
   </div>
 
-  <div class="g-recaptcha" data-sitekey="6Lc4gbUqAAAAAO2A0TPybxGXOZTQ2jJ5oxW0uEty"></div>
+  <div class="g-recaptcha" data-sitekey=""></div> <!-- Site key will be set by the script -->
   <button data-mdb-ripple-init type="submit" onclick="deleteInput()" class="btn btn-primary btn-block mb-4">Send</button>
 </form>
    

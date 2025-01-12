@@ -22,9 +22,12 @@ app.use("/publicProjects/SimonGame", express.static(join(__dirname, 'publicProje
 app.use("/publicProjects/calculator", express.static(join(__dirname, 'publicProjects', 'calculator')));
 
 app.get("/", (req, res) => {
-  res.sendFile(join(__dirname, "public", "index.html"));
+  res.sendFile(join(__dirname, "public", "index.html"), {
+    headers: {
+      'Content-Security-Policy': `script-src 'self' https://www.google.com/recaptcha/; frame-src 'self' https://www.google.com/recaptcha/;`,
+    }
+  });
 });
-
 
 app.get("/publicProjects/DiceGame/", (req, res) => {
   res.sendFile(join(__dirname, "publicProjects", "DiceGame", "dicee.html"));
