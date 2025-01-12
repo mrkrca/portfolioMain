@@ -4,6 +4,7 @@ import { dirname, join } from "path";
 import { fileURLToPath } from "url";
 import dotenv from "dotenv";
 import nodemailer from "nodemailer";
+import fetch from "node-fetch";
 
 dotenv.config();
 
@@ -39,7 +40,21 @@ app.get("/publicProjects/calculator/", (req, res) => {
 
 
 app.post('/submit', async (req, res) => {
-  const { name, email, message } = req.body;
+  const { name, email, message, 'cf-turnstile-response': turnstileResponse } = req.body;
+
+  // Verify Turnstile response
+  const turnstileSecret = process.env.TURNSTILE_SECRET_KEY;
+  const verificationUrl = `https://challenges.cloudflare.com/turnstile/v0/siteverify`;
+  const verificationResponse = await fetch(verificationUrl, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: `secret=${turnstileSecret}&response=${turnstileResponse}`
+  });
+  const verificationResult = await verificationResponse.json();
+
+  if (!verificationResult.success) {
+    return res.status(400).send('Turnstile verification failed');
+  }
 
   const transporter = nodemailer.createTransport({
     host: process.env.SMTP_HOST,
@@ -60,12 +75,11 @@ app.post('/submit', async (req, res) => {
 
   try {
     await transporter.sendMail(mailOptions);
-    res.status(200).send('Email sent successfully');
+    res.status(200).send({ success: true, message: 'Email sent successfully' });
   } catch (error) {
-    res.status(500).send('Error sending email');
+    res.status(500).send({ success: false, message: 'Error sending email' });
   }
 });
-
 app.listen(port, () => {
   console.log(`Listening to port ${port}`);
 });

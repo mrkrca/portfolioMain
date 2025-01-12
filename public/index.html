@@ -431,7 +431,9 @@
     <textarea class="form-control" name="message" id="message" rows="4" placeholder="Message..."></textarea>
     
   </div>
-
+  <div class="form-group">
+    <div class="cf-turnstile" data-sitekey="0x4AAAAAAA5KdZiSf9m4aEEv"></div>
+  </div>
  
   <button data-mdb-ripple-init type="submit" onclick="deleteInput()" class="btn btn-primary btn-block mb-4">Send</button>
 </form>
@@ -451,6 +453,7 @@
 <script src="https://getbootstrap.com/docs/5.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://smtpjs.com/v3/smtp.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </body>
 
 </html>

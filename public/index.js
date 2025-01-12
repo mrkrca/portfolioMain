@@ -1,8 +1,7 @@
-const form = document.querySelector('form')
+const form = document.querySelector('form');
 const FullName = document.getElementById("name");
 const emailing = document.getElementById("email");
 const mess = document.getElementById("message");
-
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -16,11 +15,10 @@ form.addEventListener("submit", async (e) => {
       body: JSON.stringify({
         name: FullName.value,
         email: emailing.value,
-        message: mess.value
+        message: mess.value,
+        'cf-turnstile-response': document.querySelector('.cf-turnstile').dataset.response
       })
     });
-
-    
 
     const data = await response.json();
 
@@ -35,7 +33,6 @@ form.addEventListener("submit", async (e) => {
     checkInput(false); 
   }
 });
-
 
 function checkInput(success) {
   if (success) {
@@ -52,4 +49,3 @@ function checkInput(success) {
     });
   }
 }
-
