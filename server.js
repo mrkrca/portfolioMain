@@ -52,10 +52,13 @@ app.post('/submit', async (req, res) => {
   const recaptchaUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${recaptchaSecret}&response=${recaptchaResponse}`;
 
   try {
-    console.time('reCAPTCHA verification');
+    console.time('reCAPTCHA fetch');
     const recaptchaRes = await fetch(recaptchaUrl, { method: 'POST' });
+    console.timeEnd('reCAPTCHA fetch');
+
+    console.time('reCAPTCHA json');
     const recaptchaData = await recaptchaRes.json();
-    console.timeEnd('reCAPTCHA verification');
+    console.timeEnd('reCAPTCHA json');
 
     if (!recaptchaData.success) {
       return res.status(400).json({ success: false, message: 'reCAPTCHA verification failed' });
