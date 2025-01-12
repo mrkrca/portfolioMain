@@ -1,8 +1,8 @@
-const form = document.querySelector('form')
+const form = document.querySelector('form');
+const submitButton = document.querySelector('button[type="submit"]');
 const FullName = document.getElementById("name");
 const emailing = document.getElementById("email");
 const mess = document.getElementById("message");
-
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -18,8 +18,12 @@ form.addEventListener("submit", async (e) => {
     return;
   }
 
+  submitButton.disabled = true;
+  submitButton.textContent = 'Sending...';
+
   try {
     console.time('Form submission');
+    console.time('Fetch request');
     const response = await fetch('/submit', {
       method: 'POST',
       headers: {
@@ -32,8 +36,11 @@ form.addEventListener("submit", async (e) => {
         'g-recaptcha-response': recaptchaResponse
       })
     });
+    console.timeEnd('Fetch request');
 
+    console.time('Response json');
     const data = await response.json();
+    console.timeEnd('Response json');
     console.timeEnd('Form submission');
 
     if (data.success) {
@@ -46,9 +53,11 @@ form.addEventListener("submit", async (e) => {
   } catch (error) {
     console.error('Error submitting form:', error);
     checkInput(false); 
+  } finally {
+    submitButton.disabled = false;
+    submitButton.textContent = 'Submit';
   }
 });
-
 
 function checkInput(success) {
   if (success) {
