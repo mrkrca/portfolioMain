@@ -4,7 +4,7 @@ import { dirname, join } from "path";
 import { fileURLToPath } from "url";
 import dotenv from "dotenv";
 import nodemailer from "nodemailer";
-import fetch from "node-fetch";
+import fetch from "node-fetch"; 
 
 dotenv.config();
 
@@ -40,46 +40,46 @@ app.get("/publicProjects/calculator/", (req, res) => {
 
 
 app.post('/submit', async (req, res) => {
-  const { name, email, message, 'cf-turnstile-response': turnstileResponse } = req.body;
+  const { name, email, message, 'g-recaptcha-response': recaptchaResponse } = req.body;
 
-  // Verify Turnstile response
-  const turnstileSecret = process.env.TURNSTILE_SECRET_KEY;
-  const verificationUrl = `https://challenges.cloudflare.com/turnstile/v0/siteverify`;
-  const verificationResponse = await fetch(verificationUrl, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `secret=${turnstileSecret}&response=${turnstileResponse}`
-  });
-  const verificationResult = await verificationResponse.json();
-
-  if (!verificationResult.success) {
-    return res.status(400).send('Turnstile verification failed');
-  }
-
-  const transporter = nodemailer.createTransport({
-    host: process.env.SMTP_HOST,
-    port: process.env.SMTP_PORT,
-    secure: process.env.SMTP_SECURE === 'true', 
-    auth: {
-      user: process.env.SMTP_USERNAME,
-      pass: process.env.SMTP_PASSWORD
-    }
-  });
-
-  const mailOptions = {
-    from: process.env.EMAIL_FROM,
-    to: process.env.EMAIL_TO,
-    subject: "PORTFOLIO EMAIL",
-    text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
-  };
+  // Verify reCAPTCHA
+  const recaptchaSecret = process.env.TURNSTILE_SECRET_KEY;
+  const recaptchaUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${recaptchaSecret}&response=${recaptchaResponse}`;
 
   try {
+    const recaptchaRes = await fetch(recaptchaUrl, { method: 'POST' });
+    const recaptchaData = await recaptchaRes.json();
+
+    if (!recaptchaData.success) {
+      return res.status(400).json({ success: false, message: 'reCAPTCHA verification failed' });
+    }
+
+    const transporter = nodemailer.createTransport({
+      host: process.env.SMTP_HOST,
+      port: process.env.SMTP_PORT,
+      secure: process.env.SMTP_SECURE === 'true', 
+      auth: {
+        user: process.env.SMTP_USERNAME,
+        pass: process.env.SMTP_PASSWORD
+      }
+    });
+
+    const mailOptions = {
+      from: process.env.EMAIL_FROM,
+      to: process.env.EMAIL_TO,
+      subject: "PORTFOLIO EMAIL",
+      text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
+    };
+
     await transporter.sendMail(mailOptions);
-    res.status(200).send({ success: true, message: 'Email sent successfully' });
+    setTimeout(() => {
+      res.status(200).json({ success: true, message: 'Email sent successfully' });
+    }, 1000); 
   } catch (error) {
-    res.status(500).send({ success: false, message: 'Error sending email' });
+    res.status(500).json({ success: false, message: 'Error sending email' });
   }
 });
+
 app.listen(port, () => {
   console.log(`Listening to port ${port}`);
 });

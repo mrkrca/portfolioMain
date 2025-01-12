@@ -7,7 +7,7 @@
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://getbootstrap.com/docs/5.0/examples/album/album.css" rel="stylesheet">
   <link rel="stylesheet" href="main.css">
-  
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <style>
     /* Custom CSS */
     .center-div {
@@ -431,10 +431,8 @@
     <textarea class="form-control" name="message" id="message" rows="4" placeholder="Message..."></textarea>
     
   </div>
-  <div class="form-group">
-    <div class="cf-turnstile" data-sitekey="0x4AAAAAAA5KdZiSf9m4aEEv"></div>
-  </div>
- 
+
+  <div class="g-recaptcha" data-sitekey="6Lc4gbUqAAAAAO2A0TPybxGXOZTQ2jJ5oxW0uEty"></div>
   <button data-mdb-ripple-init type="submit" onclick="deleteInput()" class="btn btn-primary btn-block mb-4">Send</button>
 </form>
    
@@ -453,7 +451,6 @@
 <script src="https://getbootstrap.com/docs/5.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://smtpjs.com/v3/smtp.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </body>
 
 </html>

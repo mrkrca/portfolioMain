@@ -1,10 +1,22 @@
-const form = document.querySelector('form');
+const form = document.querySelector('form')
 const FullName = document.getElementById("name");
 const emailing = document.getElementById("email");
 const mess = document.getElementById("message");
 
+
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
+
+  const recaptchaResponse = grecaptcha.getResponse();
+
+  if (!recaptchaResponse) {
+    Swal.fire({
+      title: "NOT SENT",
+      text: "Please complete the reCAPTCHA",
+      icon: "error"
+    });
+    return;
+  }
 
   try {
     const response = await fetch('/submit', {
@@ -16,15 +28,18 @@ form.addEventListener("submit", async (e) => {
         name: FullName.value,
         email: emailing.value,
         message: mess.value,
-        'cf-turnstile-response': document.querySelector('.cf-turnstile').dataset.response
+        'g-recaptcha-response': recaptchaResponse
       })
     });
 
     const data = await response.json();
 
     if (data.success) {
-      checkInput(true); 
-      form.reset();
+      setTimeout(() => {
+        checkInput(true); 
+        form.reset();
+        grecaptcha.reset(); // Reset reCAPTCHA
+      }, 1000); // Add a delay of 1 second
     } else {
       checkInput(false); 
     }
@@ -33,6 +48,7 @@ form.addEventListener("submit", async (e) => {
     checkInput(false); 
   }
 });
+
 
 function checkInput(success) {
   if (success) {
@@ -49,3 +65,4 @@ function checkInput(success) {
     });
   }
 }
+
