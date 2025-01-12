@@ -4,7 +4,6 @@ import { dirname, join } from "path";
 import { fileURLToPath } from "url";
 import dotenv from "dotenv";
 import nodemailer from "nodemailer";
-import fetch from "node-fetch";
 
 dotenv.config();
 
@@ -40,21 +39,7 @@ app.get("/publicProjects/calculator/", (req, res) => {
 
 
 app.post('/submit', async (req, res) => {
-  const { name, email, message, 'cf-turnstile-response': turnstileResponse } = req.body;
-
-  // Verify Turnstile response
-  const turnstileSecret = process.env.TURNSTILE_SECRET_KEY;
-  const verificationUrl = `https://challenges.cloudflare.com/turnstile/v0/siteverify`;
-  const verificationResponse = await fetch(verificationUrl, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `secret=${turnstileSecret}&response=${turnstileResponse}`
-  });
-  const verificationResult = await verificationResponse.json();
-
-  if (!verificationResult.success) {
-    return res.status(400).send('Turnstile verification failed');
-  }
+  const { name, email, message } = req.body;
 
   const transporter = nodemailer.createTransport({
     host: process.env.SMTP_HOST,
