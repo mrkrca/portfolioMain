@@ -38,8 +38,8 @@ form.addEventListener("submit", async (e) => {
       setTimeout(() => {
         checkInput(true); 
         form.reset();
-        grecaptcha.reset(); // Reset reCAPTCHA
-      }, 1000); // Add a delay of 1 second
+        grecaptcha.reset(); 
+      }, 500); 
     } else {
       checkInput(false); 
     }

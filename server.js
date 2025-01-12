@@ -79,7 +79,7 @@ app.post('/submit', async (req, res) => {
     await transporter.sendMail(mailOptions);
     setTimeout(() => {
       res.status(200).json({ success: true, message: 'Email sent successfully' });
-    }, 1000); 
+    }, 500); 
   } catch (error) {
     res.status(500).json({ success: false, message: 'Error sending email' });
   }
