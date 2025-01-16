@@ -17,12 +17,29 @@
       justify-content: center; 
       align-items: center; 
       max-width: 600px; 
-      width: 100%; /* Set width to 100% */
+      width: 100%; 
       height: 40vh; 
       margin-right: auto; 
       margin-left: auto;
       padding-right: 15px; 
       padding-left: 15px;
+    }
+
+    
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .card-title {
+        
+        font-size: 1.5rem;
+        text-align: center;
+      }
+      .intern-h1 {
+        margin-top: 50px;
+      }
     }
   </style>
 </head>
@@ -87,6 +104,8 @@
 
   <div class="album py-5 mt-1 mb-1 ">
     <div class="container ">
+      <h1 class="d-flex justify-content-center"> <strong>PERSONAL PROJECTS</strong></h1>
+      <h2 class="mt-5"><strong>Front-End</strong> And <strong>Back-End</strong> Projects</h2>
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3  ">
     
         <div class="col-md-4 mt-1 mb-1">
@@ -256,12 +275,66 @@
         <!-- ADD MORE CARD IF WANTED -->
 
       </div>
-
+      <h2 class="mt-5"><strong>Cloud & Infrastructure Projects</strong></h2>
+      <div class="card mb-4" style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;  " >
+        <div class="card-body p-4" style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; ">
+          <div  >
+            <h5 class="card-title text-decoration-none text-dark list-group-item-action" ><strong>Private Cloud Infrastructure</strong></h5>
+            <h5 class="card-text " >I have hands-on experience in server administration and private cloud infrastructure. I utilized TrueNAS to set up and manage a RAID 5 storage system, creating a secure and efficient private cloud storage solution. This system hosts my personal portfolio website, which is currently live and operational. The project involved configuring network access, implementing security measures (VPN and HTTPS), and managing remote file synchronization and backups, simulating the functionality of modern cloud services.</h5>
+          </div>
+          <div class="mt-5">
+            <h5 class="card-title"><strong>AWS</strong></h5>
+            <h5 class="card-text">Deployed a static website on an AWS EC2 instance running Ubuntu and Apache, configuring the server to serve the website with HTTPS for secure access. Managed the setup of Apache and configured security groups to control traffic, ensuring the website was securely accessible. The project involved setting up the server, maintaining the website, and ensuring smooth operation with minimal overhead.</h5>
+          </div>
+        </div>
+      </div>
     </div>
     
   </div>
  
-  
+  <div class="container my-5">
+    <a href="#" class="navbar-brand d-flex align-items-center justify-content-center my-5">
+      <strong class="text-dark h1 font-weight-bold text-uppercase">Experience</strong>
+    </a>
+    <div class="row">
+      
+      <div class="col-md-6 mb-4">
+        <h1 class="d-flex justify-content-center">Work and Travel</h1>
+        <div class="card h-100" style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
+        
+          <div class="card-body">
+            <h5 class="card-title">Touch of Italy | Ocean City, MD</h5>
+            <p class="card-text">
+              <ul>
+                <li>Prepared sauces, soups, and other dishes according to recipes.</li>
+                <li>Developed strong customer service skills by effectively handling transactions and addressing customer inquiries, ensuring a positive experience.</li>
+                <li>Gained cross-cultural communication skills by interacting with diverse customers and team members, enhancing cultural awareness and sensitivity.</li>
+                <li>Improved language proficiency by engaging with customers and colleagues, facilitating better communication in a multicultural environment.</li>
+              </ul>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-4">
+        <h1 class="d-flex justify-content-center intern-h1">Internships</h1>
+        <div class="card h-100">
+          <div class="card-body" style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
+            <h5 class="card-title">Integral inženjering a.d. | Banja Luka, RS</h5>
+            <p class="card-text">
+              <ul>
+                <li>Provided technical support to other personnel involved in the testing operations.</li>
+                <li>Collaborated on the development of a product sales website using Bootstrap, enhancing responsive design and user experience.</li>
+                <li>Gained practical knowledge of "Code First" methodologies and database integration, streamlining website functionality.</li>
+                <li>Received mentorship from an experienced programmer, learning new web development techniques and best practices.</li>
+                <li>Demonstrated strong problem-solving skills by independently troubleshooting and optimizing website features.</li>
+              </ul>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center">
     
@@ -361,44 +434,7 @@
     </div>
   </div>
   
-  <div class="container my-5">
-    <a href="#" class="navbar-brand d-flex align-items-center justify-content-center my-5">
-      <strong class="text-dark h1 font-weight-bold text-uppercase">Experience</strong>
-    </a>
-    <div class="row">
-      <div class="col-md-6 mb-4">
-        <div class="card h-100" style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
-          <div class="card-body">
-            <h5 class="card-title">Touch of Italy | Ocean City, MD</h5>
-            <p class="card-text">
-              <ul>
-                <li>Prepared sauces, soups, and other dishes according to recipes.</li>
-                <li>Developed strong customer service skills by effectively handling transactions and addressing customer inquiries, ensuring a positive experience.</li>
-                <li>Gained cross-cultural communication skills by interacting with diverse customers and team members, enhancing cultural awareness and sensitivity.</li>
-                <li>Improved language proficiency by engaging with customers and colleagues, facilitating better communication in a multicultural environment.</li>
-              </ul>
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 mb-4">
-        <div class="card h-100">
-          <div class="card-body" style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
-            <h5 class="card-title">Integral inženjering a.d. | Banja Luka, RS</h5>
-            <p class="card-text">
-              <ul>
-                <li>Provided technical support to other personnel involved in the testing operations.</li>
-                <li>Collaborated on the development of a product sales website using Bootstrap, enhancing responsive design and user experience.</li>
-                <li>Gained practical knowledge of "Code First" methodologies and database integration, streamlining website functionality.</li>
-                <li>Received mentorship from an experienced programmer, learning new web development techniques and best practices.</li>
-                <li>Demonstrated strong problem-solving skills by independently troubleshooting and optimizing website features.</li>
-              </ul>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+
   
 </main>
 
